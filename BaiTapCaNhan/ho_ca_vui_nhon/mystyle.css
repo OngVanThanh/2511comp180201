@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.control-panel {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+button {
+  background-color: rgba(255,255,255,0.7);
+  border: 2px solid #0066cc;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #0099ff;
+  color: white;
+}
+
+.aquarium {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.shark {
+  position: absolute;
+  top: 200px;
+  left: -200px;
+  animation: sharkMove 8s linear infinite;
+}
+.shark img {
+  width: 100%;
+  height: auto;
+  transition: transform 0,5s;
+}
+@keyframes sharkMove {
+  0% { left: 0; transform: scaleX(1);}
+  45% { left: 85%; transform: scaleX(1); }
+  50% { transform: scaleX(-1); }
+  100% {transform: scaleX(-1); } 
+}
+
+.turtle {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 120px;
+  animation: turtleMove 18s ease-in-out infinite;
+  z-index: 2;
+}
+
+.turtle img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s;
+}
+
+@keyframes turtleMove {
+  0% { left: 0; transform: scaleX(1); }
+  45% { left: 85%; transform: scaleX(1); }
+  50% { transform: scaleX(-1); }
+  95% { left: 0; transform: scaleX(-1); }
+  100% {transform: scaleX(1); }
+}
+
+.diver {
+  position: absolute;
+}
+
+.diver1 { left: 200px; bottom: 100px; animation: diverMove1 6s ease-in-out infinite; }
+.diver2 { left: 1000px; bottom: 200px; animation: diverMove2 7s ease-in-out infinite; }
+.diver3 { left: 1200px; bottom: 400px; animation: diverMove3 10s ease-in-out infinite; }
+
+@keyframes diverMove1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-60px); }
+}
+@keyframes diverMove2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-80px); }
+}
+@keyframes diverMove3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+
+.goldFish {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.goldFish img {
+  width: 5%;
+  height: auto;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  animation: tail 1s ease-in-out infinite alternate;
+}
+.goldFish {top: 50%; left: -100px; animation: goldFishMove 13s infinite;}
+@keyframes tail {
+  from { transform: rotate(0deg); }
+  to { transform: roteta(3deg); }
+}
+@keyframes goldFishMove {
+  0% { transform: translateX(0) scaleX(1); }
+  20% { transform: translate(200px, 20px) rotate(2deg) scaleX(1); }
+  40% { transform: translate(400px, 10px) roate(-3deg) scaleX(1); }
+  50% { transform: scaleX(-1); }
+  70% { transform: translate(-200px, -15px) rotate(3deg) scaleX(-1); }
+  90% { transform: translate(-400px, 10px) rotate(-2deg) scaleX(-1); }
+  100% { transform: translate(0, 0) scaleX(1);}
+}

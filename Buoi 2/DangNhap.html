@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="formDangNhap" method="get" action="XuLyDangNhap.php">
+        <div>
+            Username:
+            <input type="username" placeholder="Nhap username"/>
+        </div>
+        <div>
+            Password:
+            <input type="password" placeholder="Nhap password"/>
+        </div>
+        <div>
+            Gioi tinh:
+            <input type="radio" checked value="1" name="gioitinh"/>Nu
+            <input type="radio" value="0" name="gioitinh"/>Nam
+            <input type="radio" value="-1" name="gioitinh"/>Khac
+        </div>
+        <div>
+            Noi sinh:
+            <select name="noisinh" id="">
+                <option value="HN">Ha Noi</option>
+                <option value="HCM">Ho Chi Minh</option>
+                <option value="DN">Da Nang</option>
+                <option value="KH">Khanh Hoa</option>
+                <option value="LD">Lam Dong</option>
+            </select>
+        </div>
+        <input type="submit" value="Dang nhap"/>
+        <input type="submit" value="Nhap lai"/>
+    </form>
+</body>
+</html>

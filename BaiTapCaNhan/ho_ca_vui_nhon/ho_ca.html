@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hồ cá vui nhộn</title>
+  <link rel="stylesheet" href="mystyle.css">
+<body>
+  <div class="control-panel">
+    <button id="btnBackground">🌅 Đổi cảnh nền</button>
+    <button id="btnMusic">🎵 Bật / Tắt nhạc</button> 
+  </div>
+  <div class="aquarium">
+    <div class="shark"><img src="images/shark.png" alt="Ca map"></div>
+    <div class="turtle"><img src="images/turtle.png" alt="Rua bien"></div>
+
+    <div class="diver diver1"><img src="images/diver1.png" alt="Tho lan 1"></div>    
+    <div class="diver diver2"><img src="images/diver2.png" alt="Tho lan 2"></div>
+    <div class="diver diver3"><img src="images/diver3.png" alt="Tho lan 3"></div>
+
+    <div class="goldFish"><img src="images/goldFishSchool.png" alt="Ca vang"></div>        
+  </div>
+
+  <audio id="bgMusic" src="images/ocean_sound.mp3" loop></audio>
+
+  <script>
+    const backgrounds = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg',];
+    let index = 0;
+    document.getElementById('btnBackground').onclick = () => {
+      index = (index + 1) % backgrounds.length;
+      document.querySelector('.aquarium').style.backgroundImage = `url('images/${backgrounds[index]}')`;
+    };
+
+    const music = document.getElementById('bgMusic');
+    btnMusic = document.getElementById('btnMusic');
+    let playing = false;
+    btnMusic.onclick = () => {
+      if (playing) {
+        music.pause();
+        btnMusic.textContent = "Bật nhạc";
+      } else {
+        music.play();
+        btnMusic.textContent = "Tắt nhạc";
+      }
+      playing = !playing;
+    }
+
+  </script>
+</body>
